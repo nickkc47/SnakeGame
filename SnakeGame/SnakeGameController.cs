@@ -42,6 +42,20 @@ namespace SnakeGame
             {
                 direction = SnakeGameModel.MOVE_RIGHT;
             }
+            else if (keys.Contains(Keys.Space))
+            {
+                if (timer.Enabled == true)
+                {
+                    timer.Enabled = false;
+                    System.Windows.Forms.MessageBox.Show("Pause");
+
+                }
+                else if (timer.Enabled == false)
+                {
+                    System.Windows.Forms.MessageBox.Show("resume");
+                    timer.Enabled = true;
+                }
+            }
             // Find all snakeboard model we know
             if (direction == -1) return;
             foreach (Model m in mList)
